@@ -7,9 +7,6 @@
 		});
 		hljs.initHighlighting();
 
-		// Bootstrap tooltips
-		$('[data-toggle="tooltip"]').tooltip();
-
 		// Click-to-copy
 		(function() {
 			var elements = document.querySelectorAll('[data-clipboard-text]');

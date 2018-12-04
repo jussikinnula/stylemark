@@ -1,10 +1,9 @@
-var rfr = require('rfr');
 var fs = require('fs');
 var path = require('path');
 var Handlebars = require('handlebars');
-var marked = rfr('src/marked');
 var _ = require('lodash');
 var moment = require('moment');
+var marked = require('./marked');
 
 var helpers = {
 	date: function(date, format) {

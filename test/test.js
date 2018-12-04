@@ -1,12 +1,11 @@
 'use strict';
 
-var rfr = require('rfr');
 var path = require('path');
 var expect = require('chai').expect;
-var Parser = rfr('src/parser');
 var fs = require('fs');
 var _ = require('lodash');
 var findRoot = require('find-root');
+var Parser = require('../src/parser');
 
 describe('A Markdown file without front matter', () => {
 	var parser = new Parser();

@@ -1,11 +1,10 @@
-var rfr = require('rfr');
 var fs = require('fs');
 var path = require('path');
 var yaml = require('js-yaml');
-var Parser = rfr('src/parser');
-var generator = rfr('src/generator');
 var _ = require('lodash');
 var findRoot = require('find-root');
+var Parser = require('./parser');
+var generator = require('./generator');
 
 var jsExtensions = require('common-js-file-extensions');
 var markdownExtensions = require('markdown-extensions');

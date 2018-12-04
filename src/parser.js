@@ -1,12 +1,11 @@
 'use strict';
 
-var rfr = require('rfr');
 var _ = require('lodash');
-var Component = rfr('src/component');
 var matter = require('gray-matter');
 var dir = require('node-dir');
 var path = require('path');
 var fs = require('fs');
+var Component = require('./component');
 
 class Parser {
 

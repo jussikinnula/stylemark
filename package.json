@@ -63,8 +63,7 @@
     "mkdirp": "^0.5.1",
     "moment": "^2.22.2",
     "natives": "^1.1.6",
-    "node-dir": "^0.1.17",
-    "rfr": "^1.2.3"
+    "node-dir": "^0.1.17"
   },
   "devDependencies": {
     "chai": "^4.2.0",

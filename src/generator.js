@@ -6,7 +6,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var babel = require('babel-core');
 var Handlebars = require('./handlebars');
-var marked = require('./marked');
+var remarkable = require('./remarkable');
 
 var docTemplate = fs.readFileSync(path.resolve(__dirname, 'templates/doc.handlebars'), 'utf8');
 var exampleTemplate = fs.readFileSync(path.resolve(__dirname, 'templates/example.handlebars'), 'utf8');
@@ -168,7 +168,7 @@ class Generator {
 		if (doc.description) {
 			// Replaces <example> tags with <iframe> tags
 			doc.description = doc.description.replace(
-				/<example name="([^"]+)"( height="\d+")?><\/example>/g,
+				/<example name="([^"]+)"><\/example>/g,
 				`<div class="i-example">
 					<h5 class="i-example__heading">
 						<a
@@ -190,7 +190,6 @@ class Generator {
 							data-src="${doc.slug}-$1.html"
 							data-initinview="true"
 							data-title="Loading…"
-							$2
 						></div>
 					</div>
 				</div>\n`
@@ -200,7 +199,7 @@ class Generator {
 			doc.description = doc.description.replace(
 				/<(info|success|warning|danger)>([\s\S]*?)<\/\1>/g,
 				function(match, tag, content) {
-					var html = marked(content);
+					var html = remarkable(content);
 					var icon = {
 						info: 'fa fa-info-circle',
 						success: 'fa fa-check-circle',

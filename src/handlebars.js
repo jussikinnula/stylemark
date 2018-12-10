@@ -3,7 +3,7 @@ var path = require('path');
 var Handlebars = require('handlebars');
 var _ = require('lodash');
 var moment = require('moment');
-var marked = require('./marked');
+var remarkable = require('./remarkable');
 
 var helpers = {
 	date: function(date, format) {
@@ -51,7 +51,7 @@ var helpers = {
 			.replace(/<Object>/g, '&lt;Object&gt;')
 			.replace(/<object>/g, '&lt;object&gt;');
 
-		return new Handlebars.SafeString(marked(markdown));
+		return new Handlebars.SafeString(remarkable(markdown));
 	},
 	isArray: function(value) {
 		return _.isArray(value);

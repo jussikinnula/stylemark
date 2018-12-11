@@ -168,7 +168,7 @@ class Generator {
 		if (doc.description) {
 			// Replaces <example> tags with <iframe> tags
 			doc.description = doc.description.replace(
-				/<example name="([^"]+)"( height="\d+")?><\/example>/g,
+				/<example name="([^"]+)"><\/example>/g,
 				`<div class="i-example">
 					<h5 class="i-example__heading">
 						<a
@@ -190,7 +190,6 @@ class Generator {
 							data-src="${doc.slug}-$1.html"
 							data-initinview="true"
 							data-title="Loading…"
-							$2
 						></div>
 					</div>
 				</div>\n`

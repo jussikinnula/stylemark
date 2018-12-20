@@ -116,10 +116,11 @@
       $('.i-page__mobile-toggle > .icon').toggleClass('open');
     });
 
-    window.hideMobileMenu = function hideMobileMenu() {
+    // Hide mobile menu when clicking sidebar items
+    $('.i-sidebar-list-item').click(function() {
       $('.i-page__sidebar').removeClass('visible');
       $('.i-page__mobile-toggle > .icon').removeClass('open');
-    }
+    });
 
 	});
 })(jQuery);

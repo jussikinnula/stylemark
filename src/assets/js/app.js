@@ -98,18 +98,28 @@
 			});
 		});
 
-		// Mobile nav select
-		$('.i-nav-select').change(function() {
-			var slug = $(this).find('option:selected').val();
-			window.location.hash = slug;
-		});
-
 		// Code block toggle
 		$('.i-code-block__lang.-collapsible').click(function() {
 			var $lang = $(this);
 			$lang.find('i').toggleClass('fa-caret-right').toggleClass('fa-caret-down');
 			$lang.siblings('.i-code-block__content').toggleClass('hidden');
 		});
+
+    // Mobile menu toggle
+    $('.i-page__mobile-toggle').click(function() {
+      $('.i-page__sidebar').toggleClass('visible');
+      var $categories = $('.i-page__sidebar > .theme-sidebar-categories');
+      $categories.toggleClass('scrollable');
+      var $rect = $categories[0].getBoundingClientRect();
+      var $height = $(window).height() - Math.ceil($rect.top) - 50;
+      $categories[0].style.height = $height + 'px';
+      $('.i-page__mobile-toggle > .icon').toggleClass('open');
+    });
+
+    window.hideMobileMenu = function hideMobileMenu() {
+      $('.i-page__sidebar').removeClass('visible');
+      $('.i-page__mobile-toggle > .icon').removeClass('open');
+    }
 
 	});
 })(jQuery);

@@ -115,14 +115,14 @@
     transition: transform .25s ease-in-out;
   }
 
-  .i-page__sidebar .theme-sidebar-categories.scrollable {
+  .i-page__sidebar.visible {
+    transform: translateX(0);
+  }
+
+  .i-page__sidebar.visible .theme-sidebar-categories {
     overflow-y: auto;
     height: 300px; /* default height */
     margin-bottom: 15px;
-  }
-
-  .i-page__sidebar.visible {
-    transform: translateX(0);
   }
 }
 
